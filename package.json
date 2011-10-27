@@ -1,0 +1,14 @@
+{
+  "name": "faceup",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "2.5.0",
+    "jade": ">= 0.0.1",
+    "imagemagick": "~0.1.2",
+    "request": "~2.1.1",
+    "buffers": "~0.1.1",
+    "async": "~0.1.12",
+    "coffee-script": "~1.1.2"
+  }
+}
