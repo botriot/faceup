@@ -11,10 +11,8 @@ var request = require('request')
 function applyAffine(template, photo, face) {
   return template(face).map(function(part, i) {
     // Convert the destination coords from percentages to pixels
-    part = part.map(function(p, i) {
-      if (i < 2) return p
-      return (i % 2 == 0 ? p * photo.width : p * photo.height) * 0.01
-    })
+    part = [part[0], part[1], part[2] * photo.width * 0.01, part[3] * photo.height * 0.01]
+
     return part[0]+','+part[1]+' '+part[2]+','+part[3]
   }).join(' ')
 }
