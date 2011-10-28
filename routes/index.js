@@ -64,6 +64,8 @@ function applyOverlay(image, options, callback) {
   args.push('-flatten')
   args.push('jpg:-')
 
+  console.log(args.join(' '))
+
   var proc = im.convert(args, function(err, stdout, stdin) {
     if (err) return callback(err)
 
