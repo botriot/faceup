@@ -9,6 +9,7 @@
     "request": "~2.1.1",
     "buffers": "~0.1.1",
     "async": "~0.1.12",
-    "coffee-script": "~1.1.2"
+    "coffee-script": "~1.1.2",
+    "cluster": "~0.7.7"
   }
 }
