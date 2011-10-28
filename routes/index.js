@@ -8,15 +8,6 @@ var request = require('request')
   , async = require('async')
   , mapping = require('../mapping')
 
-function applyAffine(template, photo, face) {
-  return template(face).map(function(part, i) {
-    // Convert the destination coords from percentages to pixels
-    part = [part[0], part[1], part[2] * photo.width * 0.01, part[3] * photo.height * 0.01]
-
-    return part[0]+','+part[1]+' '+part[2]+','+part[3]
-  }).join(' ')
-}
-
 function faceDetect(image, callback) {
   var uri = url.parse('http://api.face.com/faces/detect.json', true)
   uri.query = {
@@ -51,11 +42,10 @@ function applyOverlay(image, options, callback) {
   ]
 
   var photo = options.face.photos[0]
-  var width = function(w) { return w * photo.width * .01 }
-  var height = function(h) { return h * photo.height * .01 }
+
   options.face.photos[0].tags.forEach(function(face) {
     try {
-      var affine = applyAffine(mapping[options.overlay], photo, face)
+      var transform = mapping[options.overlay](face, photo)
     } catch (err) {
       // TODO Probably just missing the feature (like face.nose, etc)
       // console.log(err.stack)
@@ -64,12 +54,11 @@ function applyOverlay(image, options, callback) {
 
     args = args.concat([
       '(',
-        'overlays/'+options.overlay+'.png',
-        '+distort',
-        'Affine',
-        affine,
-      ')',
+      'overlays/'+options.overlay+'.png',
+      '+distort'
     ])
+    args = args.concat(transform)
+    args.push(')')
   })
 
   args.push('-flatten')
