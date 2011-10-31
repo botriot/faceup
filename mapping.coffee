@@ -15,3 +15,8 @@ module.exports =
     [108, 111, face.nose.x, face.nose.y]
     [108, 202, face.mouth_center.x, face.mouth_center.y]
   ]
+
+  scumbag: affine (face) -> [
+    [79, 129, face.eye_left.x, face.eye_left.y]
+    [137, 120, face.eye_right.x, face.eye_right.y]
+  ]
