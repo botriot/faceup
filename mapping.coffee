@@ -21,6 +21,14 @@ module.exports =
     [137, 120, face.eye_right.x, face.eye_right.y]
   ]
 
+  jason: affine (face) -> [
+    [95, 176, face.eye_left.x, face.eye_left.y]
+    [223, 208, face.eye_right.x, face.eye_right.y]
+    [131, 316, face.mouth_center.x, face.mouth_center.y]
+  ]
+
+
+
   rohan: affine (face) -> [
     [49, 107, face.eye_left.x, face.eye_left.y]
     [135, 107, face.eye_right.x, face.eye_right.y]
