@@ -2,8 +2,8 @@
 
 module.exports =
   hipster: affine (face) -> [
-    [128, 60, face.eye_left.x, face.eye_left.y]
-    [329, 60, face.eye_right.x, face.eye_right.y]
+    [138, 80, face.eye_left.x, face.eye_left.y]
+    [314, 80, face.eye_right.x, face.eye_right.y]
   ]
 
   mustache: affine (face) -> [
