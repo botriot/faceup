@@ -33,6 +33,9 @@ app.configure('production', function(){
 // Routes
 
 app.get('/', routes.index);
+app.get('/img', routes.img);
+app.get('/img.jpg', routes.img);
+app.get('/img.jpeg', routes.img);
 
 if (require.main === module) {
   app.listen(process.env.PORT || 3000);
