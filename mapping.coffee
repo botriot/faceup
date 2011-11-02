@@ -1,5 +1,11 @@
 {affine} = require './transforms'
 
+# -- AFFINE
+# affine mappings have a list of control points. the first two numbers are
+# the x,y coords of a pixel on the overlay image. The next two numbers are
+# a point on the destination image (expressed percentage, 0-100). You can
+# use the various face.{eye_left,eye_right,nose,mouth_left,...} helpers.
+
 module.exports =
   hipster: affine (face) -> [
     [138, 80, face.eye_left.x, face.eye_left.y]
