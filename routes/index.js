@@ -1,7 +1,7 @@
 var image = require('../lib/image')
 
 exports.index = function(req, res, next) {
-  return res.send('Index coming soon, check out /img?src=...&overlay=hipster', {'Content-Type': 'text/plain'}, 200)
+  return res.sendfile('public/index.html')
 }
 
 exports.img = function(req, res, next) {
