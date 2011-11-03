@@ -41,13 +41,13 @@ body {
 }
 
 a {
-  color: #FEA436;
+  color: rgb(217,91,67);
   text-decoration:none;
   font-weight:bold;
 }
 
 a:hover {
-  color: #C6761D;
+  color: rgba(217,91,67,0.6);
 }
 
 .wrapper {
@@ -93,21 +93,28 @@ article {
 }
 
 .about {
-  padding:50px;
-  background-color:#E3E8CF;
+  padding:25px;
+  background-color:rgb(227, 232, 207);
   margin-right:260px;
   overflow:hidden;
+  border:1px solid rgb(187, 192, 167);
+}
+
+.preview-wrap {
+  width:490px;
+  margin:0 auto;
+  min-height:400px;
 }
 
 .preview-img {
   background-color:#fff;
   margin-bottom: 40px;
+  padding:20px;
   box-shadow:rgba(0,0,0,0.5) 0 3px 10px;
 }
 
 .preview-img img {
-  max-width:580px;
-  min-height:400px;
+  max-width:100%;
+  max-height:100%;
   display:block;
-  margin:20px auto;
 }
