@@ -29,18 +29,25 @@ header, section, footer, article, aside {
 }
 
 html {
-  background-color:#bbb;
+  background:#ADD8C7 url(../image/noise.png) repeat 0 0;
 }
 
 body {
   font-family: 'Open Sans', Arial, sans-serif;
   font-size: 15px;
   line-height:1.5;
-  padding:100px 0;
+  padding:50px 0;
+  color: rgb(85,85,85);
 }
 
 a {
-  color: #00B7FF;
+  color: #FEA436;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+a:hover {
+  color: #C6761D;
 }
 
 .wrapper {
@@ -50,18 +57,13 @@ a {
 
 aside {
   float:right;
-  background-color:#ddd;
   width:240px;
-  margin-top:50px;
 }
 
 aside h1 {
   font-size:38px;
   margin:20px;
-}
-
-.about {
-  overflow:hidden;
+  text-shadow:#70AFC4 2px 0 0px;
 }
 
 .about h2 {
@@ -86,25 +88,26 @@ aside p {
 }
 
 article {
-  padding:50px;
-  background-color:#eee;
-  margin-right:240px;
+  margin-right:260px;
+  padding-bottom:40px;
 }
 
 .about {
   padding:50px;
-  background-color:#ccc;
-  margin-right:240px;
+  background-color:#E3E8CF;
+  margin-right:260px;
+  overflow:hidden;
 }
 
 .preview-img {
   background-color:#fff;
-  border:1px solid #ccc;
-  margin-bottom: 25px;
+  margin-bottom: 40px;
+  box-shadow:rgba(0,0,0,0.5) 0 3px 10px;
 }
 
 .preview-img img {
   max-width:580px;
+  min-height:400px;
   display:block;
   margin:20px auto;
 }
