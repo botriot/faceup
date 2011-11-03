@@ -11,7 +11,13 @@ exports.img = function(req, res, next) {
   }
 
   image.mash(data, function(err, image) {
-    if (err) return next(err)
+    if (err) {
+      console.log(err.stack || err)
+      return res.sendfile('public/images/fail.png')
+    }
+    if (!image) {
+      return res.sendfile('public/images/fail.png')
+    }
     res.send(image, {'Content-Type': 'image/jpeg'}, 200)
   })
 };
