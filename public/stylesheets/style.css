@@ -9,7 +9,7 @@
 // ----------------
 
 html, body { margin: 0; padding: 0; }
-h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, cite, code, del, dfn, em, img, q, s, samp, small, strike, strong, sub, sup, tt, var, dd, dl, dt, li, ol, ul, fieldset, form, label, legend, button, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; font-weight: normal; font-style: normal; font-size: 100%; line-height: 1; font-family: inherit; }
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, cite, code, del, dfn, em, img, q, s, samp, small, strike, strong, sub, sup, tt, var, dd, dl, dt, li, ol, ul, fieldset, form, label, legend, button, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; font-weight: normal; font-style: normal; font-size: 100%; font-family: inherit; }
 table { border-collapse: collapse; border-spacing: 0; }
 ol, ul { list-style: none; }
 q:before, q:after, blockquote:before, blockquote:after { content: ""; }
@@ -23,8 +23,20 @@ header, section, footer, article, aside {
 }
 /* @end */
 
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/OpenSans-Semibold.ttf');
+}
+
+html {
+  background-color:#bbb;
+}
+
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 15px;
+  line-height:1.5;
+  padding:100px 0;
 }
 
 a {
@@ -36,6 +48,63 @@ a {
   margin:0 auto;
 }
 
-.content {
-  text-align:center;
+aside {
+  float:right;
+  background-color:#ddd;
+  width:240px;
+  margin-top:50px;
+}
+
+aside h1 {
+  font-size:38px;
+  margin:20px;
+}
+
+.about {
+  overflow:hidden;
+}
+
+.about h2 {
+  font-size:25px;
+  margin-bottom:20px;
+}
+
+.about .twitter-images {
+  float:left;
+}
+
+.twitter-images img {
+  display:block;
+  width:64px;
+  height:64px;
+  float:left;
+  margin-right:10px;
+}
+
+aside p {
+  margin:0 20px 20px;
+}
+
+article {
+  padding:50px;
+  background-color:#eee;
+  margin-right:240px;
+}
+
+.about {
+  padding:50px;
+  background-color:#ccc;
+  margin-right:240px;
+}
+
+.preview-img {
+  background-color:#fff;
+  border:1px solid #ccc;
+  margin-bottom: 25px;
+}
+
+.preview-img img {
+  max-width:580px;
+  display:block;
+  margin:20px auto;
 }
