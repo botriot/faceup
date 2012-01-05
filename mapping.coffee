@@ -13,8 +13,8 @@ module.exports =
   ]
 
   mustache: affine (face) -> [
-    [249, 26, face.nose.x, face.nose.y]
-    [249, 80, face.mouth_center.x, face.mouth_center.y]
+    [249, 0, face.nose.x, face.nose.y]
+    [249, 105, face.mouth_center.x, face.mouth_center.y]
   ]
 
   clown: affine (face) -> [
