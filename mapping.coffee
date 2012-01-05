@@ -8,37 +8,54 @@
 
 module.exports =
   hipster: affine (face) -> [
-    [138, 80, face.eye_left.x, face.eye_left.y]
-    [314, 80, face.eye_right.x, face.eye_right.y]
+    [138, 80, face.eye_left]
+    [314, 80, face.eye_right]
   ]
+
+  # hipster: srt (face) -> [
+  #   [234.5, 72]
+  #   face.width * 1.1 / 469
+  #   face.roll
+  #   @middle(face.eye_left, face.eye_right)
+  # ]
 
   mustache: srt (face) -> [
     [249, 105]
-    Math.sqrt(Math.pow(face.nose.rx - face.mouth_center.rx, 2) + Math.pow(face.nose.ry - face.mouth_center.ry, 2)) / 105
-    Math.atan((face.mouth_right.ry - face.mouth_left.ry) / (face.mouth_right.rx - face.mouth_left.rx)) / Math.PI * 180
-    [face.mouth_center.x, face.mouth_center.y]
+    face.width / 491 # @distance(face.nose, face.mouth_center) / 105
+    face.roll # @angle(face.mouth_left, face.mouth_right)
+    face.mouth_center
   ]
 
-  clown: affine (face) -> [
-    [108, 111, face.nose.x, face.nose.y]
-    [108, 202, face.mouth_center.x, face.mouth_center.y]
+  # The original mustachio algorithm
+  mustache2: srt (face) -> [
+    [249, 105]
+    @distance(face.nose, face.mouth_center) / 105
+    @angle(face.mouth_left, face.mouth_right)
+    face.mouth_center
+  ]
+
+  clown: srt (face, photo) -> [
+    [108, 111]
+    face.width * 0.5 / 202
+    0
+    face.nose
   ]
 
   scumbag: affine (face) -> [
-    [79, 129, face.eye_left.x, face.eye_left.y]
-    [137, 120, face.eye_right.x, face.eye_right.y]
+    [79, 129, face.eye_left]
+    [137, 120, face.eye_right]
   ]
 
   jason: affine (face) -> [
-    [95, 176, face.eye_left.x, face.eye_left.y]
-    [223, 208, face.eye_right.x, face.eye_right.y]
-    [131, 316, face.mouth_center.x, face.mouth_center.y]
+    [95, 176, face.eye_left]
+    [223, 208, face.eye_right]
+    [131, 316, face.mouth_center]
   ]
 
 
 
   rohan: affine (face) -> [
-    [49, 107, face.eye_left.x, face.eye_left.y]
-    [135, 107, face.eye_right.x, face.eye_right.y]
-    [88, 202, face.mouth_center.x, face.mouth_center.y]
+    [49, 107, face.eye_left]
+    [135, 107, face.eye_right]
+    [88, 202, face.mouth_center]
   ]
