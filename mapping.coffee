@@ -1,4 +1,4 @@
-{affine} = require './transforms'
+{affine, srt} = require './transforms'
 
 # -- AFFINE
 # affine mappings have a list of control points. the first two numbers are
@@ -12,14 +12,11 @@ module.exports =
     [314, 80, face.eye_right.x, face.eye_right.y]
   ]
 
-  mustache: affine (face) -> [
-    [249, 0, face.nose.x, face.nose.y]
-    [249, 105, face.mouth_center.x, face.mouth_center.y]
-  ]
-
-  mustache2: affine (face) -> [
-    [249, 0, face.mouth_center.x, face.nose.y]
-    [249, 105, face.mouth_center.x, face.mouth_center.y]
+  mustache: srt (face) -> [
+    [249, 105]
+    Math.sqrt(Math.pow(face.nose.rx - face.mouth_center.rx, 2) + Math.pow(face.nose.ry - face.mouth_center.ry, 2)) / 105
+    Math.atan((face.mouth_right.ry - face.mouth_left.ry) / (face.mouth_right.rx - face.mouth_left.rx)) / Math.PI * 180
+    [face.mouth_center.x, face.mouth_center.y]
   ]
 
   clown: affine (face) -> [
