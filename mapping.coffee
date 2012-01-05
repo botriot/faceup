@@ -21,8 +21,8 @@ module.exports =
 
   mustache: srt (face) -> [
     [249, 105]
-    face.width / 491 # @distance(face.nose, face.mouth_center) / 105
-    face.roll # @angle(face.mouth_left, face.mouth_right)
+    face.width / 491
+    face.roll
     face.mouth_center
   ]
 
