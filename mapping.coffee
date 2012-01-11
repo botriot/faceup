@@ -26,6 +26,13 @@ module.exports =
     face.mouth_center
   ]
 
+  sopa: srt (face) -> [
+    [64, 19]
+    face.width / 128
+    face.roll
+    face.mouth_center
+  ]
+
   # The original mustachio algorithm
   mustache2: srt (face) -> [
     [249, 105]
