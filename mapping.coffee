@@ -12,6 +12,11 @@ module.exports =
     [314, 80, face.eye_right]
   ]
 
+  googly: affine (face) -> [
+    [107, 165, face.eye_left]
+    [372, 165, face.eye_right]
+  ]
+
   # hipster: srt (face) -> [
   #   [234.5, 72]
   #   face.width * 1.1 / 469
