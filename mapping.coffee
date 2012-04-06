@@ -48,6 +48,13 @@ module.exports =
     face.mouth_center
   ]
 
+  beard: srt (face) -> [
+    [343, 200]
+    face.width / 650
+    face.roll
+    face.mouth_center
+  ]
+
   monocle: srt (face) -> [
     [68, 72]
     face.width / 256
