@@ -18,6 +18,12 @@ module.exports =
     [222, 185, face.nose]
   ]
 
+  phantom: affine (face) -> [
+    [211, 217, face.eye_left]
+    [345, 217, face.eye_right]
+    [278, 296, face.nose]
+  ]
+
   googly: affine (face) -> [
     [107, 165, face.eye_left]
     [372, 165, face.eye_right]
