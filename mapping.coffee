@@ -49,8 +49,8 @@ module.exports =
   ]
 
   monocle: srt (face) -> [
-    [134, 144]
-    face.width / 512
+    [68, 72]
+    face.width / 256
     face.roll
     face.eye_right
   ]
