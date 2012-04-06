@@ -48,6 +48,13 @@ module.exports =
     face.mouth_center
   ]
 
+  monocle: srt (face) -> [
+    [134, 144]
+    face.width / 512
+    face.roll
+    face.eye_right
+  ]
+
   sopa: srt (face) -> [
     [64, 19]
     face.width / 128
