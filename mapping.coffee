@@ -12,6 +12,12 @@ module.exports =
     [314, 80, face.eye_right]
   ]
 
+  disguise: affine (face) -> [
+    [148, 106, face.eye_left]
+    [282, 106, face.eye_right]
+    [222, 185, face.nose]
+  ]
+
   googly: affine (face) -> [
     [107, 165, face.eye_left]
     [372, 165, face.eye_right]
