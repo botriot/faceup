@@ -29,6 +29,11 @@ module.exports =
     [372, 165, face.eye_right]
   ]
 
+  eyepatch: affine (face) -> [
+    [135, 145, face.eye_left]
+    [326, 145, face.eye_right]
+  ]
+
   # hipster: srt (face) -> [
   #   [234.5, 72]
   #   face.width * 1.1 / 469
