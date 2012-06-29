@@ -95,6 +95,11 @@ module.exports =
     [131, 316, face.mouth_center]
   ]
 
+  batman: affine (face) -> [
+    [43, 217, face.eye_left]
+    [121, 207, face.eye_right]
+    [93, 299, face.mouth_center]
+  ]
 
 
   rohan: affine (face) -> [
