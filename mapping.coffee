@@ -101,9 +101,9 @@ module.exports =
     [93, 299, face.mouth_center]
   ]
 
-  dissapoint: affine (face) -> [
-    [103, 178, face.eye_left]
-    [582, 178, face.eye_right]
+  disapprove: affine (face) -> [
+    [160, 178, face.eye_left]
+    [535, 178, face.eye_right]
   ]
 
   rohan: affine (face) -> [
