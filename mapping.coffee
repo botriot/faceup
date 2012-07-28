@@ -111,3 +111,9 @@ module.exports =
     [135, 107, face.eye_right]
     [88, 202, face.mouth_center]
   ]
+
+  zedd: affine (face) -> [
+    [81, 369, face.eye_left]
+    [179, 369, face.eye_right]
+    [132, 486, face.mouth_center]
+  ]
