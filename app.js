@@ -1,6 +1,9 @@
 if (!process.env.FACE_API_KEY || !process.env.FACE_API_SECRET) {
   throw new Error("Need to set FACE_API_KEY and FACE_API_SECRET")
 }
+if (!process.env.MASHAPE_API_KEY || !process.env.MASHAPE_API_SECRET) {
+  throw new Error("Need to set MASHAPE_API_KEY and MASHAPE_API_SECRET")
+}
 
 /**
  * Module dependencies.
