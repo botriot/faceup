@@ -7,7 +7,8 @@ exports.index = function(req, res, next) {
 exports.img = function(req, res, next) {
   var data = {
     image: req.param('src', 'http://www.librarising.com/astrology/celebs/images2/QR/queenelizabethii.jpg'),
-    overlay: req.param('overlay', 'mustache')
+    overlay: req.param('overlay', 'mustache'),
+    method: req.param('method', 'face')
   }
 
   image.mash(data, function(err, image) {
