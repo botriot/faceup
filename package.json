@@ -10,6 +10,7 @@
     "buffers": "~0.1.1",
     "async": "~0.1.12",
     "coffee-script": "~1.1.2",
-    "lru-cache": "~1.0.4"
+    "lru-cache": "~1.0.4",
+    "opencv": "0.0.5"
   }
 }
