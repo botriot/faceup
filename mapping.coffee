@@ -117,3 +117,17 @@ module.exports =
     [179, 369, face.eye_right]
     [132, 486, face.mouth_center]
   ]
+
+  cigar: srt (face) -> [
+    [302, 218]
+    face.width / 512
+    -face.roll
+    [face.mouth_left.x + ((face.mouth_center.x - face.mouth_left.x) * 0.5), face.mouth_left.y]
+  ]
+
+  pipe: srt (face) -> [
+    [293, 21]
+    face.width / 256
+    face.roll
+    [face.mouth_left.x + ((face.mouth_center.x - face.mouth_left.x) * 0.6), face.mouth_left.y - (face.mouth_left.y - face.mouth_center.y) / 2]
+  ]
