@@ -33,6 +33,7 @@ app.configure('production', function(){
 // Routes
 
 app.get('/', routes.index);
+app.get('/stashable', routes.stashable);
 app.get('/img', routes.img);
 app.get('/img.jpg', routes.img);
 app.get('/img.jpeg', routes.img);
