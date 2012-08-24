@@ -23,7 +23,7 @@ exports.img = function(req, res, next) {
   })
 };
 
-exports.stashable = function(req, res, next) {
+exports.stacheable = function(req, res, next) {
   var data = {
     image: req.param('src', 'http://www.librarising.com/astrology/celebs/images2/QR/queenelizabethii.jpg'),
     overlay: req.param('overlay', 'mustache'),
@@ -33,11 +33,11 @@ exports.stashable = function(req, res, next) {
   image.mash(data, function(err, image) {
     if (err) {
       console.log(err.stack || err)
-      return res.send({"stashable":"false"}, {}, 200)
+      return res.send({"stacheable":"false"}, {}, 200)
     }
     if (!image) {
-      return res.send({"stashable":"false"}, {}, 200)
+      return res.send({"stacheable":"false"}, {}, 200)
     }
-    return res.send({"stashable":"true"}, {}, 200)
+    return res.send({"stacheable":"true"}, {}, 200)
   })
 };
