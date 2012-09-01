@@ -10,6 +10,12 @@ exports.img = function(req, res, next) {
     overlay: req.param('overlay', 'mustache'),
     method: req.param('method', 'cv')
   }
+  req.metrics.track('img', {
+    ip: req.headers['x-real-ip'],
+    image: data.image,
+    overlay: data.overlay,
+    method: data.method
+  })
 
   image.mash(data, function(err, image) {
     if (err) {
@@ -29,6 +35,11 @@ exports.check = function(req, res, next) {
     overlay: req.param('overlay', 'mustache'),
     method: req.param('method', 'cv')
   }
+  req.metrics.track('check', {
+    ip: req.headers['x-real-ip'],
+    image: data.image,
+    method: data.method
+  })
 
   image.mash(data, function(err, image) {
     if (err) {

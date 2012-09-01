@@ -8,8 +8,14 @@ if (!process.env.MASHAPE_API_KEY || !process.env.MASHAPE_API_SECRET) {
 
 var express = require('express')
   , routes = require('./routes')
+  , Mixpanel = require('mixpanel')
 
 var app = module.exports = express.createServer();
+var mixpanel;
+
+if (process.env.MIXPANEL) {
+  mixpanel = Mixpanel.init(process.env.MIXPANEL)
+}
 
 // Configuration
 
@@ -18,6 +24,16 @@ app.configure(function(){
   app.set('view engine', 'jade');
   app.use(express.bodyParser());
   app.use(express.methodOverride());
+  app.use(function(req, res, next) {
+    if (mixpanel) {
+      req.metrics = mixpanel
+    } else {
+      req.metrics = {
+        track: function() {}
+      }
+    }
+    next()
+  });
   app.use(app.router);
   app.use(express.static(__dirname + '/public'));
 });

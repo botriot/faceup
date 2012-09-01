@@ -11,6 +11,7 @@
     "async": "~0.1.12",
     "coffee-script": "~1.1.2",
     "lru-cache": "~1.0.4",
-    "opencv": "git://github.com/peterbraden/node-opencv.git"
+    "opencv": "git://github.com/botriot/node-opencv.git",
+    "mixpanel": "0.0.6"
   }
 }
