@@ -8,7 +8,7 @@ exports.img = function(req, res, next) {
   var data = {
     image: req.param('src', 'http://www.librarising.com/astrology/celebs/images2/QR/queenelizabethii.jpg'),
     overlay: req.param('overlay', 'mustache'),
-    method: req.param('method', 'cv')
+    method: req.param('method', 'lambda')
   }
   req.metrics.track('img', {
     ip: req.headers['x-real-ip'],
@@ -33,7 +33,7 @@ exports.check = function(req, res, next) {
   var data = {
     image: req.param('src', 'http://www.librarising.com/astrology/celebs/images2/QR/queenelizabethii.jpg'),
     overlay: req.param('overlay', 'mustache'),
-    method: req.param('method', 'cv')
+    method: req.param('method', 'lambda')
   }
   req.metrics.track('check', {
     ip: req.headers['x-real-ip'],
