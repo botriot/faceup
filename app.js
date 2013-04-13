@@ -10,7 +10,7 @@ var express = require('express')
   , routes = require('./routes')
   , Mixpanel = require('mixpanel')
 
-var app = module.exports = express.createServer();
+var app = module.exports = express()
 var mixpanel;
 
 if (process.env.MIXPANEL) {
