@@ -8,8 +8,8 @@
 
 module.exports =
   hipster: affine (face) -> [
-    [138, 80, face.eye_left]
-    [314, 80, face.eye_right]
+    [314, 80, face.eye_left]
+    [138, 80, face.eye_right]
   ]
 
   disguise: affine (face) -> [
