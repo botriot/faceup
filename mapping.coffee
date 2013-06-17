@@ -56,7 +56,7 @@ module.exports =
   ]
 
   monocle: srt (face) -> [
-    [68, 72]
+    [-25, 72]
     face.width / 256
     face.roll
     face.eye_right
@@ -85,8 +85,8 @@ module.exports =
   ]
 
   scumbag: affine (face) -> [
-    [79, 129, face.eye_left]
-    [137, 120, face.eye_right]
+    [137, 120, face.eye_left]
+    [79, 129, face.eye_right]
   ]
 
   jason: affine (face) -> [
